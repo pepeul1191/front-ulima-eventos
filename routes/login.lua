@@ -8,7 +8,7 @@ local function Index(self)
 
     end,
     GET = function(self)
-      return 'login'
+      return { render = "login.index", layout = "layouts.blank"}
     end
   }
 end

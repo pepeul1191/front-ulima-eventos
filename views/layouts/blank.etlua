@@ -1,0 +1,10 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Servicio de Monta</title>
+<body>
+  <h1>Header</h1>
+  <% content_for("inner") %> 
+  <h3>Footer</h3>
+</body>
+</html>

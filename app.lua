@@ -2,6 +2,7 @@ local lapis = require("lapis")
 local config = require("lapis.config").get()
 local respond_to = require("lapis.application").respond_to
 local app = lapis.Application()
+app:enable("etlua")
 
 -- LOGIN Y ERRORES ... ROUTES
 local login = require("routes.login")
