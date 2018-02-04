@@ -1,6 +1,7 @@
 local M = {}
-local config = require("lapis.config")
+local config = require('lapis.config')
 local inspect = require('inspect')
+local constants = require('config.constants')
 
 local function Index(self)
   return {
@@ -8,7 +9,8 @@ local function Index(self)
 
     end,
     GET = function(self)
-      return { render = "login.index", layout = "layouts.blank"}
+      self.constants = constants
+      return { render = 'login.index', layout = 'layouts.blank'}
     end
   }
 end

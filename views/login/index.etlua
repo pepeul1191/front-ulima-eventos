@@ -1,1 +1,2 @@
 index
+<%= constants.BASE_URL %>
