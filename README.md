@@ -32,3 +32,4 @@ Fuentes:
 + https://github.com/pepeul1191/tutoriales/blob/master/Lua.md
 + http://openresty.org/en/linux-packages.html
 + http://leafo.net/lapis/reference/lua_getting_started.html
++ http://fperrad.github.io/lua-Spore/
