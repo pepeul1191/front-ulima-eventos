@@ -31,7 +31,10 @@ local function Acceder(self)
       usuario = self.params['usuario']
       contrasenia = self.params['contrasenia']
       if usuario == 'pips' and contrasenia == '123' then
-        return { 'usuario: ' .. usuario .. '<br> contraseña: ' .. contrasenia, layout = false }
+        self.session.estado = 'activo'
+				self.session.tiempo = os.date('*t')
+				self.session.usuario = self.params['usuario']
+        return self:write({redirect_to = constants.BASE_URL})
       else
         self.constants = constants
         self.helpers = helpers
@@ -45,7 +48,28 @@ local function Acceder(self)
   }
 end
 
+local function Salir(self)
+  return {
+    GET = function(self)
+      self.session.estado = nil
+      self.session.tiempo = nil
+      self.session.usuario = nil
+      self:write({redirect_to = self:url_for("loginIndex")})
+    end
+  }
+end
+
+local function Ver(self)
+  return {
+    GET = function(self)
+      return { json = { usuario = self.session.usuario, tiempo = self.session.tiempo, estado = self.session.estado } }
+    end
+  }
+end
+
 M.Acceder = Acceder
 M.Index = Index
+M.Ver = Ver
+M.Salir = Salir
 
 return M

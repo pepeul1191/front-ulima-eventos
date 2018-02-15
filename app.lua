@@ -12,9 +12,12 @@ app:get('/', function()
   return 'Welcome to Lapis xd ' .. require('lapis.version')
 end)
 
--- LOGIN Y ERRORES ... RUTAS
-app:match('homeIndex', '/login', respond_to(login.Index(self)))
+-- LOGIN
+app:match('loginIndex', '/login', respond_to(login.Index(self)))
 app:match('accederLogin', '/login/acceder', respond_to(login.Acceder(self)))
+app:match("loginSalir", "/salir", respond_to(login.Salir(self)))
+app:match("loginVer", "/ver", respond_to(login.Ver(self)))
+-- ERRORES
 app:match('errorAccess', '/error/access/:error', respond_to(error.Access(self)))
 
 return app
