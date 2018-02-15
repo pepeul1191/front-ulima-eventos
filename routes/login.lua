@@ -3,6 +3,7 @@ local config = require('lapis.config')
 local inspect = require('inspect')
 local constants = require('config.constants')
 local helpers = require('config.helpers')
+local middleware = require('config.middleware')
 
 local function Index(self)
   return {
@@ -24,9 +25,7 @@ end
 local function Acceder(self)
   return {
     before = function(self)
-      if self.params['csrf'] ~= constants.CSRF then
-        self:write({redirect_to = constants.BASE_URL .. 'error/access/505'})
-      end
+      middleware.ValidarCSRF(self)
     end,
     POST = function(self)
       usuario = self.params['usuario']
