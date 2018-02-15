@@ -5,3 +5,5 @@ proxy_temp
 scgi_temp
 uwsgi_temp
 nginx.conf.compiled
+/static/bower_components
+/static/dist
