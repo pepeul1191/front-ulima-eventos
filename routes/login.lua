@@ -4,6 +4,7 @@ local inspect = require('inspect')
 local constants = require('config.constants')
 local helpers = require('config.helpers')
 local middleware = require('config.middleware')
+local accesos_usuario = require('providers.accesos_usuario')
 
 local function Index(self)
   return {
@@ -30,7 +31,7 @@ local function Acceder(self)
     POST = function(self)
       usuario = self.params['usuario']
       contrasenia = self.params['contrasenia']
-      if usuario == 'pips' and contrasenia == '123' then
+      if accesos_usuario.Acceder(usuario, contrasenia) == '1' then
         self.session.estado = 'activo'
 				self.session.tiempo = os.date('*t')
 				self.session.usuario = self.params['usuario']
@@ -62,7 +63,8 @@ end
 local function Ver(self)
   return {
     GET = function(self)
-      return { json = { usuario = self.session.usuario, tiempo = self.session.tiempo, estado = self.session.estado } }
+      return accesos_usuario.Listar
+      --return { json = { usuario = self.session.usuario, tiempo = self.session.tiempo, estado = self.session.estado } }
     end
   }
 end

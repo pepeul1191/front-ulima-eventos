@@ -17,6 +17,10 @@ Instalar inspect (dump de variables):
 
     $ sudo luarocks install inspect
 
+Instalar cliente REST:
+
+      $ sudo luarocks install luasocket
+
 Arrancar el servidor con su puerto por defecto(8080):
 
     $ lapis server
@@ -33,3 +37,6 @@ Fuentes:
 + http://openresty.org/en/linux-packages.html
 + http://leafo.net/lapis/reference/lua_getting_started.html
 + http://fperrad.github.io/lua-Spore/
++ http://lua-users.org/lists/lua-l/2008-07/msg00206.html
++ http://marc.info/?l=lua-l&m=131947263308232
++ http://w3.impa.br/~diego/software/luasocket/ltn12.html
