@@ -5,7 +5,7 @@ local constants = require('config.constants')
 local helpers = require('config.helpers')
 local middleware = require('config.middleware')
 local accesos_usuario = require('providers.accesos_usuario')
-local inspect = require('inspect')
+-- local inspect = require('inspect')
 
 local function Index(self)
   return {
