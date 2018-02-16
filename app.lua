@@ -8,6 +8,10 @@ app:enable('etlua')
 local login = require('routes.login')
 local error = require('routes.error')
 
+app:before_filter(function(self)
+  
+end)
+
 app:get('/', function()
   return 'Welcome to Lapis xd ' .. require('lapis.version')
 end)

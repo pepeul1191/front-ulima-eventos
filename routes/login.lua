@@ -5,6 +5,7 @@ local constants = require('config.constants')
 local helpers = require('config.helpers')
 local middleware = require('config.middleware')
 local accesos_usuario = require('providers.accesos_usuario')
+local inspect = require('inspect')
 
 local function Index(self)
   return {
@@ -62,9 +63,13 @@ end
 
 local function Ver(self)
   return {
+    before = function(self)
+      --
+    end,
     GET = function(self)
-      return accesos_usuario.Listar
-      --return { json = { usuario = self.session.usuario, tiempo = self.session.tiempo, estado = self.session.estado } }
+      --self:headers
+      --return accesos_usuario.Listar
+      return { json = { usuario = self.session.usuario, tiempo = self.session.tiempo, estado = self.session.estado } }
     end
   }
 end
