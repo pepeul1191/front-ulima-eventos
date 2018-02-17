@@ -23,6 +23,7 @@ app:match("loginSalir", "/salir", respond_to(login.Salir(self)))
 app:match("loginVer", "/ver", respond_to(login.Ver(self)))
 -- REGISTRO
 app:match('registroValidarUsuarioRepetido', '/registro/validar_usuario_repetido', respond_to(registro.ValidarUsuarioRepetido(self)))
+app:match('registroValidarCorreoRepetido', '/registro/validar_correo_repetido', respond_to(registro.ValidarCorreoRepetido(self)))
 -- ERRORES
 app:match('errorAccess', '/error/access/:error', respond_to(error.Access(self)))
 

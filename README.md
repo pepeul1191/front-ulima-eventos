@@ -21,6 +21,10 @@ Instalar cliente REST:
 
       $ sudo luarocks install luasocket
 
+Instalar JSON:
+
+      $ sudo luarocks install lua-cjson
+
 Arrancar el servidor con su puerto por defecto(8080):
 
     $ lapis server
