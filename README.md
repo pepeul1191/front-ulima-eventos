@@ -29,6 +29,22 @@ Arrancar el servidor con las configuraciones de 'config.lua':
 
     $ lapis server dev1
 
+### Fuentes externas de vistas HTML:
+
++ Home : https://bootsnipp.com/snippets/1BQNV
++ Login form : https://bootsnipp.com/snippets/featured/modal-login-with-jquery-effects
++ Contacto : https://bootsnipp.com/snippets/zD4p9
++ Footer : https://bootsnipp.com/snippets/GQmaP
++ Error404 : https://bootsnipp.com/snippets/OeKdM
+
+### TODO
+
++ Validación del formulario de registro valida como correo no registrado en la base de datos si al final del correo se añade un espacio
++ El menú del sitio debe ser un backboneView con su propio model
++ Cuando se usa la validación de campos en forms del login el contenedor del todo el login no se expande con el contenido
++ Hacer que el login se comunique con el servidor mediante AJAX
++ Hacer el error 404 pero con backbone en las rutas marionette de la aplicación
+
 ---
 
 Fuentes:
@@ -40,3 +56,4 @@ Fuentes:
 + http://lua-users.org/lists/lua-l/2008-07/msg00206.html
 + http://marc.info/?l=lua-l&m=131947263308232
 + http://w3.impa.br/~diego/software/luasocket/ltn12.html
++ https://stackoverflow.com/questions/24908199/convert-json-string-to-lua-table
