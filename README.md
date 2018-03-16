@@ -19,7 +19,7 @@ Instalar inspect (dump de variables):
 
 Instalar cliente REST:
 
-      $ sudo luarocks install luasocket
+      $ sudo luarocks install lua-spore
 
 Instalar JSON:
 
@@ -67,3 +67,6 @@ Fuentes:
 + http://marc.info/?l=lua-l&m=131947263308232
 + http://w3.impa.br/~diego/software/luasocket/ltn12.html
 + https://stackoverflow.com/questions/24908199/convert-json-string-to-lua-table
++ http://fperrad.github.io/lua-Spore/
++ http://fperrad.github.io/lua-Spore/spore/
++ https://github.com/pepeul1191/lua-spore-demo

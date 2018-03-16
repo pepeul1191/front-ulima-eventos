@@ -63,5 +63,5 @@ def correo_repetido
   end
 end
 
-#nombre_repetido
+nombre_repetido
 correo_repetido
