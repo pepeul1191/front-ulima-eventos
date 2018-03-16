@@ -41,5 +41,4 @@ end
 
 M.ValidarUsuarioRepetido = ValidarUsuarioRepetido
 M.ValidarCorreoRepetido = ValidarCorreoRepetido
-
 return M

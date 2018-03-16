@@ -1,5 +1,5 @@
 local M = {}
-local constants = require('config.constants')
+local constants = require("config.constants")
 
 local function LoadCSS(csss)
   rpta = ""
@@ -23,5 +23,4 @@ end
 
 M.LoadCSS = LoadCSS
 M.LoadJS = LoadJS
-
 return M
