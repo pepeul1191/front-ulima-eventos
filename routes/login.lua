@@ -15,8 +15,16 @@ local function Index(self)
     GET = function(self)
       self.constants = constants
       self.helpers = helpers
-      self.csss = {"bower_components/bootstrap/dist/css/bootstrap.min", "bower_components/font-awesome/css/font-awesome.min"}
-      self.jss = {"bower_components/jquery/dist/jquery.min", "bower_components/bootstrap/dist/js/bootstrap.min"}
+      self.csss = {
+        "bower_components/bootstrap/dist/css/bootstrap.min",
+        "bower_components/font-awesome/css/font-awesome.min",
+        "assets/css/styles",
+        "assets/css/login",
+      }
+      self.jss = {
+        "bower_components/jquery/dist/jquery.min",
+        "bower_components/bootstrap/dist/js/bootstrap.min",
+      }
       self.title = "Login"
       self.mensaje = false
       return { render = "login.index", layout = "layouts.blank"}
@@ -41,8 +49,16 @@ local function Acceder(self)
       else
         self.constants = constants
         self.helpers = helpers
-        self.csss = {"bower_components/bootstrap/dist/css/bootstrap.min", "bower_components/font-awesome/css/font-awesome.min"}
-        self.jss = {"bower_components/jquery/dist/jquery.min", "bower_components/bootstrap/dist/js/bootstrap.min"}
+        self.csss = {
+          "bower_components/bootstrap/dist/css/bootstrap.min",
+          "bower_components/font-awesome/css/font-awesome.min",
+          "assets/css/styles",
+          "assets/css/login",
+        }
+        self.jss = {
+          "bower_components/jquery/dist/jquery.min",
+          "bower_components/bootstrap/dist/js/bootstrap.min",
+        }
         self.title = "Login"
         self.mensaje = true
         return { render = "login.index", layout = "layouts.blank"}

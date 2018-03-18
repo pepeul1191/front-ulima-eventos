@@ -8,11 +8,12 @@ app:match("/test/conexion", function(self)
   return "ok"
 end)
 
---HOME
+-- HANDLERS
 local home = require('routes.home')
 local registro = require('routes.registro')
 local login = require('routes.login')
 local error = require('routes.error')
+local administracion = require('routes.administracion')
 
 -- HOME
 app:match('homeIndex', '/', respond_to(home.Index(self)))
@@ -24,6 +25,8 @@ app:match("loginVer", "/ver", respond_to(login.Ver(self)))
 -- REGISTRO
 app:match('registroValidarUsuarioRepetido', '/registro/validar_usuario_repetido', respond_to(registro.ValidarUsuarioRepetido(self)))
 app:match('registroValidarCorreoRepetido', '/registro/validar_correo_repetido', respond_to(registro.ValidarCorreoRepetido(self)))
+-- ADMINISTRACION
+app:match('administracion', '/administracion', respond_to(administracion.Index(self)))
 -- ERRORES
 app:match('errorAccess', '/error/access/:error', respond_to(error.Access(self)))
 

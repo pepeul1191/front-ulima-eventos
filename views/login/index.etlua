@@ -14,10 +14,8 @@
           <span class="input-group-addon"><i class="fa fa-lock"></i></span>
           <input type="password" placeholder="contraseña" class="form-control" name="contrasenia">
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <button class="btn-u pull-right" type="submit" style="width: 100%;  margin-bottom: 15px">Ingresar</button>
-          </div>
+        <div class="input-group margin-bottom-20" style="width:100%">
+          <button class="btn btn-primary pull-right" type="submit" style="width: 100%;  margin-bottom: 15px">Ingresar</button>
         </div>
         <% if mensaje == true then%><label class="color-rojo">Usario y/o contraseña incorrectos</label><% end %>
         <hr>
