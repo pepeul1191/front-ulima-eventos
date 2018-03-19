@@ -1,7 +1,33 @@
 local M = {}
 local config = require("lapis.config")
 local json = require("cjson")
+local constants = require("config.constants")
+local helpers = require("config.helpers")
 local accesos_usuario = require("providers.accesos_usuario")
+
+local function Index(self)
+  return {
+    before = function(self)
+      --TODO
+    end,
+    GET = function(self)
+      self.constants = constants
+      self.helpers = helpers
+      self.csss = {
+        "bower_components/bootstrap/dist/css/bootstrap.min",
+        "bower_components/font-awesome/css/font-awesome.min",
+        "assets/css/registro",
+      }
+      self.jss = {
+        "bower_components/jquery/dist/jquery.min",
+        "bower_components/bootstrap/dist/js/bootstrap.min",
+      }
+      self.title = "Login"
+      self.mensaje = false
+      return { render = "registro.index", layout = false }
+    end
+  }
+end
 
 local function ValidarUsuarioRepetido(self)
   return {
@@ -39,6 +65,7 @@ local function ValidarCorreoRepetido(self)
   }
 end
 
+M.Index = Index
 M.ValidarUsuarioRepetido = ValidarUsuarioRepetido
 M.ValidarCorreoRepetido = ValidarCorreoRepetido
 return M

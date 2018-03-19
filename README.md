@@ -40,6 +40,7 @@ Arrancar el servidor con las configuraciones de 'config.lua':
 + Contacto : https://bootsnipp.com/snippets/zD4p9
 + Footer : https://bootsnipp.com/snippets/GQmaP
 + Error404 : https://bootsnipp.com/snippets/OeKdM
++ Registro : https://bootsnipp.com/snippets/8ANqZ
 
 ### TODO
 
@@ -70,3 +71,5 @@ Fuentes:
 + http://fperrad.github.io/lua-Spore/
 + http://fperrad.github.io/lua-Spore/spore/
 + https://github.com/pepeul1191/lua-spore-demo
++ http://www.ulima.edu.pe/pregrado/ingenieria-industrial/agenda/miercoles-de-ingenieria-biopolimero-partir-del-almidon-de-papa
++ http://fresno.ulima.edu.pe/go.nsf/EventosING?openform&origen=ulima&medio=web&evento=BIOPOLI-20170426

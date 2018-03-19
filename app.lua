@@ -14,7 +14,6 @@ local registro = require('routes.registro')
 local login = require('routes.login')
 local error = require('routes.error')
 local administracion = require('routes.administracion')
-
 -- HOME
 app:match('homeIndex', '/', respond_to(home.Index(self)))
 -- LOGIN
@@ -23,6 +22,7 @@ app:match('accederLogin', '/login/acceder', respond_to(login.Acceder(self)))
 app:match("loginSalir", "/salir", respond_to(login.Salir(self)))
 app:match("loginVer", "/ver", respond_to(login.Ver(self)))
 -- REGISTRO
+app:match('registroViewIndex', '/registro', respond_to(registro.Index(self)))
 app:match('registroValidarUsuarioRepetido', '/registro/validar_usuario_repetido', respond_to(registro.ValidarUsuarioRepetido(self)))
 app:match('registroValidarCorreoRepetido', '/registro/validar_correo_repetido', respond_to(registro.ValidarCorreoRepetido(self)))
 -- ADMINISTRACION
