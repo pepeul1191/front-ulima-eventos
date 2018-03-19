@@ -22,6 +22,8 @@ local function Index(self)
         "bower_components/jquery/dist/jquery.min",
         "bower_components/bootstrap/dist/js/bootstrap.min",
         "bower_components/handlebars/handlebars.min",
+        "bower_components/underscore/underscore-min",
+        "bower_components/backbone/backbone-min", 
         "assets/js/registro",
       }
       self.title = "Login"
