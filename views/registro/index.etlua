@@ -10,6 +10,9 @@
 	<title><%= title %></title>
 	<%- helpers.LoadCSS(csss)%>
 <body>
+	<header>
+		<img class="img-responsive" src="<%= constants.STATIC_URL %>assets/img/Universidad_de_Lima_logo.png" height="150" width="150">
+	</header>
 	<section class="container">
 		<div class="row">
 			<div class="col-md-6">
