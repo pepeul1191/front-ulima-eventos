@@ -21,6 +21,7 @@ local function Index(self)
       self.jss = {
         "bower_components/jquery/dist/jquery.min",
         "bower_components/bootstrap/dist/js/bootstrap.min",
+        "assets/js/registro",
       }
       self.title = "Login"
       self.mensaje = false
