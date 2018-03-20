@@ -13,7 +13,7 @@ local function IndexCSS()
     }
   else
     return {
-      "dist/home.min"
+      "dist/app-min"
     }
   end
 end
@@ -38,6 +38,7 @@ local function IndexJS()
       "bower_components/swp-plugins/assets/js/mootools.observer",
       "bower_components/swp-plugins/assets/js/mootools.grid",
       "layouts/app",
+      "views/_table_evento",
       "views/alumno",
       "views/empleado",
       "views/evento",
@@ -46,7 +47,7 @@ local function IndexJS()
     }
   else
     return {
-      "dist/home.min"
+      "dist/app-min"
     }
   end
 end

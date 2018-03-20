@@ -24,6 +24,7 @@ app:match("loginSalir", "/salir", respond_to(login.Salir(self)))
 app:match("loginVer", "/ver", respond_to(login.Ver(self)))
 -- EVENTO
 app:match("EventoViewIndex", "/eventos", respond_to(evento.Index(self)))
+app:match("EventoListar", "/evento/listar", respond_to(evento.Listar(self)))
 -- REGISTRO
 app:match("registroViewIndex", "/registro", respond_to(registro.Index(self)))
 app:match("registroValidarUsuarioRepetido", "/registro/validar_usuario_repetido", respond_to(registro.ValidarUsuarioRepetido(self)))

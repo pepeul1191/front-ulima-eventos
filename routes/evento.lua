@@ -3,6 +3,7 @@ local config = require("lapis.config")
 local json = require("cjson")
 local constants = require("config.constants")
 local helpers = require("config.helpers")
+local administracion_evento = require("providers.administracion_evento")
 
 local function Index(self)
   return {
@@ -29,5 +30,18 @@ local function Index(self)
   }
 end
 
+local function Listar(self)
+  return {
+    before = function(self)
+      --TODO: solo pasa si está logueado 
+    end,
+    GET = function(self)
+      local req = administracion_evento.client:listar{}
+      return { req.body, layout = false}
+    end
+  }
+end
+
 M.Index = Index
+M.Listar = Listar
 return M
