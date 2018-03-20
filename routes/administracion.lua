@@ -1,8 +1,10 @@
 local M = {}
 local config = require("lapis.config")
 local inspect = require("inspect")
+local json = require("cjson")
 local constants = require("config.constants")
 local helpers = require("config.helpers")
+local helper = require("helpers.administracion")
 local middleware = require("config.middleware")
 local accesos_usuario = require("providers.accesos_usuario")
 --local inspect = require('inspect')
@@ -10,26 +12,31 @@ local accesos_usuario = require("providers.accesos_usuario")
 local function Index(self)
   return {
     before = function(self)
-      --TODO
+      middleware.LoguedoHome(self)
     end,
     GET = function(self)
       self.constants = constants
       self.helpers = helpers
-      self.csss = {
-        "bower_components/bootstrap/dist/css/bootstrap.min",
-        "bower_components/font-awesome/css/font-awesome.min",
-        "assets/css/styles",
-        "assets/css/login",
-      }
-      self.jss = {
-        "bower_components/jquery/dist/jquery.min",
-        "bower_components/bootstrap/dist/js/bootstrap.min",
-      }
-      self.title = "Login"
+      self.csss = helper.IndexCSS()
+      self.jss = helper.IndexJS()
+      self.title = "Eventos Académicos"
       self.mensaje = false
-      self.menu = '[{"url":"#/","nombre":"Home"},{"url":"#/buscar","nombre":"Buscar"},{"url":"#/contacto","nombre":"Contacto"}]'
-      self.data = ''
-      return { render = "administracion.index", layout = "layouts.app"}
+      self.modulos = json.encode({
+        {url = "accesos/", nombre = "Accesos"},
+        {url = "administracion/", nombre = "Administración"},
+      })
+      self.items =  json.encode({
+        {subtitulo = "Opciones", items =
+    			{
+            {item = "Gestión de Eventos", url = "administracion#/evento"},
+            {item = "Gestión de Alumnos", url = "administracion#/alumno"},
+    				{item = "Gestión de Empleados", url = "administracion#/empleado"},
+    				{item = "Gestión de Externos", url = "administracion#/externo"},
+    			}
+    		},
+      })
+      self.data = "{}"
+      return {render = "home.index", layout = "layouts.app"}
     end
   }
 end

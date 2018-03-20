@@ -26,6 +26,7 @@ local function IndexJS()
       "bower_components/handlebars/handlebars.min",
       "bower_components/underscore/underscore-min",
       "bower_components/backbone/backbone-min",
+      "bower_components/backbone.marionette/lib/backbone.marionette.min",
       "bower_components/swp-plugins/assets/js/mootools-core.min",
       "bower_components/swp-plugins/assets/js/mootools.min",
       "bower_components/swp-plugins/assets/js/mootools-interfaces.min",
@@ -37,6 +38,10 @@ local function IndexJS()
       "bower_components/swp-plugins/assets/js/mootools.observer",
       "bower_components/swp-plugins/assets/js/mootools.grid",
       "layouts/app",
+      "views/alumno",
+      "views/empleado",
+      "views/evento",
+      "views/externo",
       "routes/app",
     }
   else
