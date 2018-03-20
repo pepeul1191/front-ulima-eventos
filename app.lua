@@ -16,6 +16,7 @@ local error = require("routes.error")
 local evento = require("routes.evento")
 local administracion = require("routes.administracion")
 local alumno = require("routes.alumno")
+local empleado = require("routes.empleado")
 -- HOME
 app:match("homeIndex", "/", respond_to(home.Index(self)))
 -- LOGIN
@@ -25,6 +26,8 @@ app:match("loginSalir", "/salir", respond_to(login.Salir(self)))
 app:match("loginVer", "/ver", respond_to(login.Ver(self)))
 -- ALUMNO
 app:match("AlumnoListar", "/alumno/listar", respond_to(alumno.Listar(self)))
+-- EMPELADO
+app:match("EmpleadoListar", "/empleado/listar", respond_to(empleado.Listar(self)))
 -- EVENTO
 app:match("EventoViewIndex", "/eventos", respond_to(evento.Index(self)))
 app:match("EventoListar", "/evento/listar", respond_to(evento.Listar(self)))

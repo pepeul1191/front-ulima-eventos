@@ -40,6 +40,7 @@ local function IndexJS()
       "layouts/app",
       "views/_table_evento",
       "views/_table_alumno",
+      "views/_table_empleado",
       "views/alumno",
       "views/empleado",
       "views/evento",
