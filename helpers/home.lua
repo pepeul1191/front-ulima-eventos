@@ -6,6 +6,10 @@ local function IndexCSS()
     return {
       "bower_components/bootstrap/dist/css/bootstrap.min",
       "bower_components/font-awesome/css/font-awesome.min",
+      "bower_components/swp-plugins/assets/css/mootools.autocomplete",
+      "bower_components/swp-plugins/assets/css/mootools.grid",
+      "bower_components/swp-plugins/assets/css/mootools.validations",
+      "assets/css/styles",
     }
   else
     return {
@@ -22,6 +26,18 @@ local function IndexJS()
       "bower_components/handlebars/handlebars.min",
       "bower_components/underscore/underscore-min",
       "bower_components/backbone/backbone-min",
+      "bower_components/swp-plugins/assets/js/mootools-core.min",
+      "bower_components/swp-plugins/assets/js/mootools.min",
+      "bower_components/swp-plugins/assets/js/mootools-interfaces.min",
+      "bower_components/swp-plugins/assets/js/jquery.upload",
+      "bower_components/swp-plugins/assets/js/mootools.chain",
+      "bower_components/swp-plugins/assets/js/mootools.dao",
+      "bower_components/swp-plugins/assets/js/mootools.autocomplete",
+      "bower_components/swp-plugins/assets/js/mootools.form",
+      "bower_components/swp-plugins/assets/js/mootools.observer",
+      "bower_components/swp-plugins/assets/js/mootools.grid",
+      "layouts/app",
+      "routes/app",
     }
   else
     return {

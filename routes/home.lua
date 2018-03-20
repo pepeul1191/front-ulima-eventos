@@ -1,6 +1,7 @@
 local M = {}
 local config = require("lapis.config")
 local inspect = require("inspect")
+local json = require("cjson")
 local constants = require("config.constants")
 local helpers = require("config.helpers")
 local helper = require("helpers.home")
@@ -18,11 +19,24 @@ local function Index(self)
       self.helpers = helpers
       self.csss = helper.IndexCSS()
       self.jss = helper.IndexJS()
-      self.title = "Login"
+      self.title = "Eventos Académicos"
       self.mensaje = false
-      self.menu = '[{"url":"#/","nombre":"Home"},{"url":"#/buscar","nombre":"Buscar"},{"url":"#/contacto","nombre":"Contacto"}]'
-      self.data = ''
-      return { render = "home.index", layout = "layouts.site"}
+      self.modulos = json.encode({
+        {url = "accesos/", nombre = "Accesos"},
+        {url = "maestros/", nombre = "Maestros"},
+    		{url = "agricultores/", nombre = "Agricultores"},
+    		{url = "estaciones/", nombre = "Estaciones"},
+      })
+      self.items =  json.encode({
+        {subtitulo = "Opciones", items =
+    			{
+    				{item = "Gestión de Sistemas", url = "accesos/#/sistema"},
+    				{item = "Gestión de Usuarios", url = "accesos/#/usuario"},
+    			}
+    		},
+      })
+      self.data = "{}"
+      return {render = "home.index", layout = "layouts.app"}
     end
   }
 end
