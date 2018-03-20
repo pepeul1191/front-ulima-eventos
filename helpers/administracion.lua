@@ -41,6 +41,7 @@ local function IndexJS()
       "views/_table_evento",
       "views/_table_alumno",
       "views/_table_empleado",
+      "views/_table_externo",
       "views/alumno",
       "views/empleado",
       "views/evento",
