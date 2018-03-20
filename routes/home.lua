@@ -10,7 +10,7 @@ local accesos_usuario = require("providers.accesos_usuario")
 local function Index(self)
   return {
     before = function(self)
-      --TODO
+      middleware.LoguedoHome(self)
     end,
     GET = function(self)
       self.constants = constants
