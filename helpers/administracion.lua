@@ -39,6 +39,7 @@ local function IndexJS()
       "bower_components/swp-plugins/assets/js/mootools.grid",
       "layouts/app",
       "views/_table_evento",
+      "views/_table_alumno",
       "views/alumno",
       "views/empleado",
       "views/evento",
