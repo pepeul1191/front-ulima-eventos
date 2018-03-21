@@ -53,6 +53,7 @@ local function IndexJS()
       "views/evento",
       "views/externo",
       "views/evento_detalle",
+      "views/evento_previsualizar",
       "routes/app",
     }
   else
