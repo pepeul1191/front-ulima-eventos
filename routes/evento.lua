@@ -61,7 +61,21 @@ local function GuardarDetalle(self)
   }
 end
 
+local function Guardar(self)
+  return {
+    before = function(self)
+      --TODO: solo pasa si está logueado
+    end,
+    POST = function(self)
+      local data =  self.params["data"]
+      req = administracion_evento.client:eliminar{data = data}
+      return { req.body, layout = false}
+    end
+  }
+end
+
 M.Index = Index
 M.Listar = Listar
 M.GuardarDetalle = GuardarDetalle
+M.Guardar = Guardar
 return M

@@ -23,6 +23,13 @@ local client = spore.new_from_lua{
         "evento",
       },
     },
+    eliminar = {
+      path = "/evento/guardar",
+      method = "POST",
+      required_params = {
+        "data",
+      },
+    },
   },
 }
 
