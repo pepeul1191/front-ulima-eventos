@@ -19,12 +19,11 @@ end
 local function IndexJS()
   if constants.AMBIENTE == "desarrollo" then
     return {
-      "bower_components/jquery/dist/jquery.min",
-      "bower_components/bootstrap/dist/js/bootstrap.min",
+
     }
   else
     return {
-      "dist/login-min"
+      
     }
   end
 end

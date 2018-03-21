@@ -9,6 +9,8 @@ local function IndexCSS()
       "bower_components/swp-plugins/assets/css/mootools.autocomplete",
       "bower_components/swp-plugins/assets/css/mootools.grid",
       "bower_components/swp-plugins/assets/css/mootools.validations",
+      "bower_components/jquery-ui/themes/base/datepicker",
+      'bower_components/jquery-timepicker-wvega/jquery.timepicker',
       "assets/css/styles",
     }
   else
@@ -37,7 +39,11 @@ local function IndexJS()
       "bower_components/swp-plugins/assets/js/mootools.form",
       "bower_components/swp-plugins/assets/js/mootools.observer",
       "bower_components/swp-plugins/assets/js/mootools.grid",
+      'bower_components/jquery-ui/ui/widgets/datepicker',
+      'bower_components/jquery-timepicker-wvega/jquery.timepicker',
+      'bower_components/ckeditor/ckeditor',
       "layouts/app",
+      "models/evento",
       "views/_table_evento",
       "views/_table_alumno",
       "views/_table_empleado",
@@ -46,6 +52,7 @@ local function IndexJS()
       "views/empleado",
       "views/evento",
       "views/externo",
+      "views/evento_detalle",
       "routes/app",
     }
   else
