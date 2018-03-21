@@ -9,6 +9,13 @@ local client = spore.new_from_lua{
       path = "/evento/listar",
       method = "GET",
     },
+    _id = {
+      path = "/evento/_id",
+      method = "GET",
+      required_params = {
+        "_id",
+      },
+    },
     crear = {
       path = "/evento/crear",
       method = "POST",

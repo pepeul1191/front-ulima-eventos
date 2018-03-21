@@ -51,7 +51,7 @@ local function GuardarDetalle(self)
     POST = function(self)
       local data =  json.decode(self.params["data"])
       local req = ""
-      if data.id == "E" then
+      if data._id == "E" then
         req = administracion_evento.client:crear{evento = json.encode(data)}
       else
         req = administracion_evento.client:editar{evento = json.encode(data)}
@@ -74,7 +74,21 @@ local function Guardar(self)
   }
 end
 
+local function Id(self)
+  return {
+    before = function(self)
+      --TODO: solo pasa si está logueado
+    end,
+    GET = function(self)
+      local _id =  self.params["_id"]
+      req = administracion_evento.client:_id{_id = _id}
+      return { req.body, layout = false}
+    end
+  }
+end
+
 M.Index = Index
+M.Id = Id
 M.Listar = Listar
 M.GuardarDetalle = GuardarDetalle
 M.Guardar = Guardar

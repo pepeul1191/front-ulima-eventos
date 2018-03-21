@@ -34,6 +34,7 @@ app:match("ExternoListar", "/externo/listar", respond_to(externo.Listar(self)))
 -- EVENTO
 app:match("EventoViewIndex", "/eventos", respond_to(evento.Index(self)))
 app:match("EventoListar", "/evento/listar", respond_to(evento.Listar(self)))
+app:match("EventoId", "/evento/_id", respond_to(evento.Id(self)))
 app:match("EventoGuardarDetalle", "/evento/guardar_detalle", respond_to(evento.GuardarDetalle(self)))
 app:match("EventoGuardar", "/evento/guardar", respond_to(evento.Guardar(self)))
 -- REGISTRO
