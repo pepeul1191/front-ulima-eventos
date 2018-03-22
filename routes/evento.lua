@@ -4,6 +4,7 @@ local json = require("cjson")
 local constants = require("config.constants")
 local helpers = require("config.helpers")
 local inspect = require("inspect")
+local helper = require("helpers.evento")
 local administracion_evento = require("providers.administracion_evento")
 
 local function Index(self)
@@ -13,17 +14,8 @@ local function Index(self)
     GET = function(self)
       self.constants = constants
       self.helpers = helpers
-      self.csss = {
-        "bower_components/bootstrap/dist/css/bootstrap.min",
-        "bower_components/font-awesome/css/font-awesome.min",
-      }
-      self.jss = {
-        "bower_components/jquery/dist/jquery.min",
-        "bower_components/bootstrap/dist/js/bootstrap.min",
-        "bower_components/handlebars/handlebars.min",
-        "bower_components/underscore/underscore-min",
-        "bower_components/backbone/backbone-min",
-      }
+      self.csss = helper.IndexCSS()
+      self.jss = helper.IndexJS()
       self.title = "Eventos ULima "
       self.mensaje = false
       return { render = "evento.index", layout = "layouts.blank" }
@@ -87,9 +79,41 @@ local function Id(self)
   }
 end
 
+local function NombreUrl(self)
+  return {
+    before = function(self)
+      --TODO: solo pasa si está logueado
+    end,
+    GET = function(self)
+      local nombre_url =  self.params["nombre_url"]
+      req = administracion_evento.client:nombre_url{nombre_url = nombre_url}
+      return { req.body, layout = false}
+    end
+  }
+end
+
+local function Inscripcion(self)
+  return {
+    before = function(self)
+      --TODO: solo pasa si está logueado
+    end,
+    GET = function(self)
+      self.nombre_url =  self.params["nombre_url"]
+      self.constants = constants
+      self.helpers = helpers
+      self.csss = helper.InscripcionCSS()
+      self.jss = helper.InscripcionJS()
+      self.title = "Eventos ULima - Inscripción"
+      return { render = "evento.inscripcion", layout = false}
+    end
+  }
+end
+
 M.Index = Index
 M.Id = Id
 M.Listar = Listar
 M.GuardarDetalle = GuardarDetalle
 M.Guardar = Guardar
+M.Inscripcion = Inscripcion
+M.NombreUrl = NombreUrl
 return M
