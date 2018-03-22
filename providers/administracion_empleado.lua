@@ -9,6 +9,13 @@ local client = spore.new_from_lua{
       path = "/empleado/listar",
       method = "GET",
     },
+    id = {
+      path = "/empleado/obtener/:empleado_id",
+      method = "GET",
+      required_params = {
+        "empleado_id",
+      },
+    },
   },
 }
 

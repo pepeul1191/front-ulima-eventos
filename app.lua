@@ -30,6 +30,7 @@ app:match("AlumnoListar", "/alumno/listar", respond_to(alumno.Listar(self)))
 app:match("AlumnoDetalle", "/alumno/id/:alumno_id", respond_to(alumno.Id(self)))
 -- EMPELADO
 app:match("EmpleadoListar", "/empleado/listar", respond_to(empleado.Listar(self)))
+app:match("EmpleadoDetalle", "/empleado/id/:empleado_id", respond_to(empleado.Id(self)))
 -- EXTERNO
 app:match("ExternoListar", "/externo/listar", respond_to(externo.Listar(self)))
 -- EVENTO
