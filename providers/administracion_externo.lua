@@ -9,6 +9,13 @@ local client = spore.new_from_lua{
       path = "/externo/listar",
       method = "GET",
     },
+    id = {
+      path = "/externo/_id/:externo_id",
+      method = "GET",
+      required_params = {
+        "externo_id",
+      },
+    },
   },
 }
 
