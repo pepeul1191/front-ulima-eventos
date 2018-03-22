@@ -34,6 +34,7 @@ app:match("EmpleadoDetalle", "/empleado/id/:empleado_id", respond_to(empleado.Id
 -- EXTERNO
 app:match("ExternoListar", "/externo/listar", respond_to(externo.Listar(self)))
 app:match("ExternoDetalle", "/externo/id/:externo_id", respond_to(externo.Id(self)))
+app:match("ExternoGuardarDetalle", "/externo/guardar_detalle", respond_to(externo.GuardarDetalle(self)))
 -- EVENTO
 app:match("EventoViewIndex", "/eventos", respond_to(evento.Index(self)))
 app:match("EventoListar", "/evento/listar", respond_to(evento.Listar(self)))

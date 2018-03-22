@@ -16,6 +16,20 @@ local client = spore.new_from_lua{
         "externo_id",
       },
     },
+    crear = {
+      path = "/externo/crear",
+      method = "POST",
+      required_params = {
+        "externo",
+      },
+    },
+    editar = {
+      path = "/externo/editar",
+      method = "POST",
+      required_params = {
+        "externo",
+      },
+    },
   },
 }
 
