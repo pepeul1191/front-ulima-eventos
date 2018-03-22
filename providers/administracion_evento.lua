@@ -10,7 +10,7 @@ local client = spore.new_from_lua{
       method = "GET",
     },
     _id = {
-      path = "/evento/_id",
+      path = "/evento/_id/:_id",
       method = "GET",
       required_params = {
         "_id",
