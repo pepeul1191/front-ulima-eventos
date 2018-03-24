@@ -19,6 +19,13 @@ local client = spore.new_from_lua{
         "data",
       },
     },
+    externo = {
+      path = "/participante/externo/agregar",
+      method = "POST",
+      required_params = {
+        "data",
+      },
+    },
   },
 }
 

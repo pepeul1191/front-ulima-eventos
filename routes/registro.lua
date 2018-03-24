@@ -6,6 +6,7 @@ local helpers = require("config.helpers")
 local accesos_usuario = require("providers.accesos_usuario")
 local administracion_alumno = require("providers.administracion_alumno")
 local administracion_empleado = require("providers.administracion_empleado")
+local administracion_externo = require("providers.administracion_externo")
 local evento_participante = require("providers.evento_participante")
 
 local function Index(self)
@@ -108,9 +109,30 @@ local function Empleado(self)
   }
 end
 
+local function Externo(self)
+  return {
+    before = function(self)
+      --TODO
+    end,
+    POST = function(self)
+      local data =  json.decode(self.params["data"])
+      if data.id == "E" then
+        local req1 = administracion_externo.client:crear{externo = self.params["data"]}
+        local res1 = json.decode(req1.body)
+        data.externo_id = res1.mensaje[2]
+        req = evento_participante.client:externo{data = json.encode(data)}
+        return { req.body, layout = false}
+      else
+        --TODO es un particpante externo antiguo
+      end
+    end
+  }
+end
+
 M.Index = Index
 M.ValidarUsuarioRepetido = ValidarUsuarioRepetido
 M.ValidarCorreoRepetido = ValidarCorreoRepetido
 M.Alumno = Alumno
 M.Empleado = Empleado
+M.Externo = Externo
 return M
