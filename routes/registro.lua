@@ -4,6 +4,8 @@ local json = require("cjson")
 local constants = require("config.constants")
 local helpers = require("config.helpers")
 local accesos_usuario = require("providers.accesos_usuario")
+local administracion_alumno = require("providers.administracion_alumno")
+local evento_participante = require("providers.evento_participante")
 
 local function Index(self)
   return {
@@ -69,7 +71,26 @@ local function ValidarCorreoRepetido(self)
   }
 end
 
+local function Alumno(self)
+  return {
+    before = function(self)
+      --TODO
+    end,
+    POST = function(self)
+      local data =  json.decode(self.params["data"])
+      local req1 = administracion_alumno.client:id{alumno_id = data.id}
+      local alumno = json.decode(req1.body)
+      alumno.evento_id = data.evento_id
+      alumno.correo_adicional = data.correo_adicional
+      alumno.telefono_adicional = data.telefono_adicional
+      req = evento_participante.client:alumno{data = json.encode(alumno)}
+      return { req.body, layout = false}
+    end
+  }
+end
+
 M.Index = Index
 M.ValidarUsuarioRepetido = ValidarUsuarioRepetido
 M.ValidarCorreoRepetido = ValidarCorreoRepetido
+M.Alumno = Alumno
 return M

@@ -47,6 +47,7 @@ app:match("EventoInscripcion", "/evento/:nombre_url", respond_to(evento.Inscripc
 app:match("registroViewIndex", "/registro", respond_to(registro.Index(self)))
 app:match("registroValidarUsuarioRepetido", "/registro/validar_usuario_repetido", respond_to(registro.ValidarUsuarioRepetido(self)))
 app:match("registroValidarCorreoRepetido", "/registro/validar_correo_repetido", respond_to(registro.ValidarCorreoRepetido(self)))
+app:match("RegistroAlumno", "/registro/alumno", respond_to(registro.Alumno(self)))
 -- ADMINISTRACION
 app:match("administracion", "/administracion", respond_to(administracion.Index(self)))
 -- ERRORES
