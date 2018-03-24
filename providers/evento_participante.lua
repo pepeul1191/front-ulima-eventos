@@ -12,6 +12,13 @@ local client = spore.new_from_lua{
         "data",
       },
     },
+    empleado = {
+      path = "/participante/empleado/agregar",
+      method = "POST",
+      required_params = {
+        "data",
+      },
+    },
   },
 }
 

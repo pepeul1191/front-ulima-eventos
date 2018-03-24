@@ -5,6 +5,7 @@ local constants = require("config.constants")
 local helpers = require("config.helpers")
 local accesos_usuario = require("providers.accesos_usuario")
 local administracion_alumno = require("providers.administracion_alumno")
+local administracion_empleado = require("providers.administracion_empleado")
 local evento_participante = require("providers.evento_participante")
 
 local function Index(self)
@@ -89,8 +90,27 @@ local function Alumno(self)
   }
 end
 
+local function Empleado(self)
+  return {
+    before = function(self)
+      --TODO
+    end,
+    POST = function(self)
+      local data =  json.decode(self.params["data"])
+      local req1 = administracion_empleado.client:id{empleado_id = data.id}
+      local empleado = json.decode(req1.body)
+      empleado.evento_id = data.evento_id
+      empleado.correo_adicional = data.correo_adicional
+      empleado.telefono_adicional = data.telefono_adicional
+      req = evento_participante.client:empleado{data = json.encode(empleado)}
+      return { req.body, layout = false}
+    end
+  }
+end
+
 M.Index = Index
 M.ValidarUsuarioRepetido = ValidarUsuarioRepetido
 M.ValidarCorreoRepetido = ValidarCorreoRepetido
 M.Alumno = Alumno
+M.Empleado = Empleado
 return M
