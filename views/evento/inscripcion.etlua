@@ -57,6 +57,7 @@
     </script>
     <script id="evento-inscripcion-template" type="text/x-handlebars-template">
       <h1>{{nombre}}</h1>
+			<label id="lblIdEvento" class="oculto">{{id}}</label>
     	<img class="img-responsive" src="{{STATIC_URL}}assets/img/ing_industrial_2017-04-26_miercoles_de_ingenieria_biopolimero-papa_600x300.jpg" alt="">
     	<br>
     	<b>{{dia_inicio}} | De {{hora_inicio}} a {{hora_fin}} | {{lugar}}</b>

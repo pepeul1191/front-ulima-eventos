@@ -16,6 +16,13 @@ local client = spore.new_from_lua{
         "alumno_id",
       },
     },
+    alumno_codigo_buscar = {
+      path = "/alumno/codigo_alumno/:codigo_alumno",
+      method = "GET",
+      required_params = {
+        "codigo_alumno",
+      },
+    },
   },
 }
 
