@@ -44,6 +44,7 @@ app:match("EventoGuardar", "/evento/guardar", respond_to(evento.Guardar(self)))
 app:match("EventoNombre", "/evento/nombre_url", respond_to(evento.NombreUrl(self)))
 app:match("EventoInscripcion", "/evento/:nombre_url", respond_to(evento.Inscripcion(self)))
 app:match("EventoAlumnoCodigoBuscar", "/evento/alumno/codigo_buscar/:codigo_alumno", respond_to(evento.AlumnoCodigoBuscar(self)))
+app:match("EventoEmpleadoCodigoBuscar", "/evento/empleado/codigo_buscar/:codigo_empleado", respond_to(evento.EmpleadoCodigoBuscar(self)))
 -- REGISTRO
 app:match("registroViewIndex", "/registro", respond_to(registro.Index(self)))
 app:match("registroValidarUsuarioRepetido", "/registro/validar_usuario_repetido", respond_to(registro.ValidarUsuarioRepetido(self)))

@@ -8,6 +8,7 @@ local helper = require("helpers.evento")
 local administracion_evento = require("providers.administracion_evento")
 local evento_participante = require("providers.evento_participante")
 local administracion_alumno = require("providers.administracion_alumno")
+local administracion_empleado = require("providers.administracion_empleado")
 
 local function Index(self)
   return {
@@ -124,6 +125,19 @@ local function AlumnoCodigoBuscar(self)
   }
 end
 
+local function EmpleadoCodigoBuscar(self)
+  return {
+    before = function(self)
+      --TODO: solo pasa si está logueado
+    end,
+    GET = function(self)
+      local codigo_empleado =  self.params["codigo_empleado"]
+      req = administracion_empleado.client:empleado_codigo_buscar{codigo_empleado = codigo_empleado}
+      return { req.body, layout = false}
+    end
+  }
+end
+
 M.Index = Index
 M.Id = Id
 M.Listar = Listar
@@ -132,4 +146,5 @@ M.Guardar = Guardar
 M.Inscripcion = Inscripcion
 M.NombreUrl = NombreUrl
 M.AlumnoCodigoBuscar = AlumnoCodigoBuscar
+M.EmpleadoCodigoBuscar = EmpleadoCodigoBuscar
 return M
