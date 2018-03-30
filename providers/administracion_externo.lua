@@ -30,6 +30,13 @@ local client = spore.new_from_lua{
         "externo",
       },
     },
+    dni = {
+      path = "/externo/dni/:dni",
+      method = "GET",
+      required_params = {
+        "dni",
+      },
+    },
   },
 }
 

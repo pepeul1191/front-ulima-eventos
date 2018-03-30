@@ -50,11 +50,24 @@ Arrancar el servidor con las configuraciones de 'config.lua':
 + Hacer que el login se comunique con el servidor mediante AJAX
 + Hacer el error 404 pero con backbone en las rutas marionette de la aplicación
 
-## Para Atom
+## Ignorar carpetas y archivos no necesarios:
 
-Ingnorar los siguientes archivos, como también dar check en tree package para que no se muestren esos archivos:
+Atom : Ingnorar los siguientes archivos, como también dar check en tree package para que no se muestren esos archivos:
 
-    .git, .hg, .svn, .DS_Store, ._*, Thumbs.db, desktop.ini, scgi_temp, client_body_temp, logs, fastcgi_temp, proxy_temp, uwsgi_temp, nginx.conf.compiled
+    logs, fastcgi_temp, proxy_temp, uwsgi_temp, nginx.conf.compiled
+
+Sublime Text:
+
+    "file_exclude_patterns":
+    [
+        ...,
+        "nginx.conf.compiled"
+    ],
+    "folder_exclude_patterns":
+    [
+        ..., 
+        "scgi_temp", "client_body_temp", "logs", "fastcgi_temp", "proxy_temp", "uwsgi_temp"
+    ],
 
 ---
 

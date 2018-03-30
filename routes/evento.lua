@@ -9,6 +9,7 @@ local administracion_evento = require("providers.administracion_evento")
 local evento_participante = require("providers.evento_participante")
 local administracion_alumno = require("providers.administracion_alumno")
 local administracion_empleado = require("providers.administracion_empleado")
+local administracion_externo = require("providers.administracion_externo")
 
 local function Index(self)
   return {
@@ -138,6 +139,19 @@ local function EmpleadoCodigoBuscar(self)
   }
 end
 
+local function ExternoDNIBuscar(self)
+  return {
+    before = function(self)
+      --TODO: solo pasa si está logueado
+    end,
+    GET = function(self)
+      local dni =  self.params["dni"]
+      req = administracion_externo.client:dni{dni = dni}
+      return { req.body, layout = false}
+    end
+  }
+end
+
 M.Index = Index
 M.Id = Id
 M.Listar = Listar
@@ -147,4 +161,5 @@ M.Inscripcion = Inscripcion
 M.NombreUrl = NombreUrl
 M.AlumnoCodigoBuscar = AlumnoCodigoBuscar
 M.EmpleadoCodigoBuscar = EmpleadoCodigoBuscar
+M.ExternoDNIBuscar = ExternoDNIBuscar
 return M

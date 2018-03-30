@@ -121,9 +121,13 @@ local function Externo(self)
         local res1 = json.decode(req1.body)
         data.externo_id = res1.mensaje[2]
         req = evento_participante.client:externo{data = json.encode(data)}
-        return { req.body, layout = false}
+        rpta = json.decode(req.body)
+        rpta.mensaje[2] = res1.mensaje[2]
+        return {json.encode(rpta) , layout = false}
       else
-        --TODO es un particpante externo antiguo
+        data.externo_id = data.id
+        req = evento_participante.client:externo{data = json.encode(data)}
+        return { req.body, layout = false}
       end
     end
   }
