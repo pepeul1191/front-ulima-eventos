@@ -18,6 +18,7 @@ local administracion = require("routes.administracion")
 local alumno = require("routes.alumno")
 local empleado = require("routes.empleado")
 local externo = require("routes.externo")
+local archivo = require("routes.archivo")
 -- HOME
 app:match("homeIndex", "/", respond_to(home.Index(self)))
 -- LOGIN
@@ -25,6 +26,8 @@ app:match("loginIndex", "/login", respond_to(login.Index(self)))
 app:match("accederLogin", "/login/acceder", respond_to(login.Acceder(self)))
 app:match("loginSalir", "/salir", respond_to(login.Salir(self)))
 app:match("loginVer", "/ver", respond_to(login.Ver(self)))
+-- ARCHIVOS
+app:match("archivos", "/archivo/subir", respond_to(archivo.Subir(self)))
 -- ALUMNO
 app:match("AlumnoListar", "/alumno/listar", respond_to(alumno.Listar(self)))
 app:match("AlumnoDetalle", "/alumno/id/:alumno_id", respond_to(alumno.Id(self)))

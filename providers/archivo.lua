@@ -3,21 +3,21 @@ local spore = require("Spore")
 local constants = require("config.constants")
 
 local client = spore.new_from_lua{
-  base_url = constants.SERVICIOS.administracion,
+  base_url = constants.SERVICIOS.archivos,
   methods = {
-    listar = {
-      path = "/empleado/listar",
+    obtener_id = {
+      path = "/imagen/obtener_id",
       method = "GET",
     },
-    id = {
-      path = "/empleado/obtener/:empleado_id",
-      method = "GET",
+    crear = {
+      path = "/imagen/crear",
+      method = "POST",
       required_params = {
-        "empleado_id",
+        "data",
       },
     },
-    empleado_codigo_buscar = {
-      path = "/empleado/codigo_empleado/:archivo_id",
+    nombre = {
+      path = "/imagen/obtener_nombre_archivo/:archivo_id",
       method = "GET",
       required_params = {
         "archivo_id",

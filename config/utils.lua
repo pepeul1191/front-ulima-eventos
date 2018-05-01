@@ -20,8 +20,8 @@ end
 function exist(tabla, item)
   rpta = false
   for k, v in pairs(tabla) do
-    if v == item then 
-      return true 
+    if v == item then
+      return true
     end
   end
   return rpta
@@ -35,11 +35,29 @@ function url_enconde(str)
     str = string.gsub( str, " ", "+" )
   end
   return str
-end 
+end
+
+function split_delimeter(s, delimiter)
+  result = {};
+  for match in (s..delimiter):gmatch("(.-)"..delimiter) do
+    table.insert(result, match);
+  end
+  return result;
+end
+
+function split_dot(s)
+  result = {};
+  for match in (s):gmatch("[^%.]+") do
+    table.insert(result, match);
+  end
+  return result;
+end
 
 M.count = count
 M.has_key = has_key
 M.exist = exist
 M.url_enconde = url_enconde
+M.split_dot = split_dot
+M.split_delimeter = split_delimeter
 
 return M

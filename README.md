@@ -19,11 +19,15 @@ Instalar inspect (dump de variables):
 
 Instalar cliente REST:
 
-      $ sudo luarocks install lua-spore
+    $ sudo luarocks install lua-spore
 
 Instalar JSON:
 
-      $ sudo luarocks install lua-cjson
+    $ sudo luarocks install lua-cjson
+
+Instalar FTP:
+
+    $ sudo luarocks install luasocket inspect
 
 Arrancar el servidor con su puerto por defecto(8080):
 
@@ -65,7 +69,7 @@ Sublime Text:
     ],
     "folder_exclude_patterns":
     [
-        ..., 
+        ...,
         "scgi_temp", "client_body_temp", "logs", "fastcgi_temp", "proxy_temp", "uwsgi_temp"
     ],
 
@@ -86,3 +90,8 @@ Fuentes:
 + https://github.com/pepeul1191/lua-spore-demo
 + http://www.ulima.edu.pe/pregrado/ingenieria-industrial/agenda/miercoles-de-ingenieria-biopolimero-partir-del-almidon-de-papa
 + http://fresno.ulima.edu.pe/go.nsf/EventosING?openform&origen=ulima&medio=web&evento=BIOPOLI-20170426
++ https://www.tutorialspoint.com/lua/lua_file_io.htm
++ https://gist.github.com/reinholdsson/d142bab5c2bbc22c5d56
++ https://ferryzhou.wordpress.com/2015/04/15/lua-split-by-dot/
++ https://gist.github.com/kardolus/68e56a77c5dc6c089153
++ http://www.luatex.org/svn/trunk/source/texk/web2c/luatexdir/luasocket/doc/ftp.html
